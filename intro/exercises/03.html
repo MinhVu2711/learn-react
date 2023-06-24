@@ -1,14 +1,19 @@
 <!-- Creating custom components -->
+
 <body>
   <div id="root"></div>
   <script src="../react.development.js"></script>
   <script src="../react-dom.development.js"></script>
   <script src="../babel.js"></script>
   <script type="text/babel">
+    function Message(props) {
+      return <div className='message'>{props.children}</div>
+    }
+
     const element = (
       <div className="container">
-        <div className="message">Hello World</div>
-        <div className="message">Goodbye World</div>
+        <Message>Hello World</Message>
+        <Message>Goodbye World</Message>
       </div>
     )
     // Just like in regular JavaScript, you often want to share code which you do
@@ -28,6 +33,7 @@
     //
     // This is only the first step to making actual React components. We'll do
     // the rest together.
+
     ReactDOM.render(element, document.getElementById('root'))
 
     // P.S. Please don't forget to ask me about React Fragments here!!
